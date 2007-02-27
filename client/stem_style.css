@@ -1,0 +1,143 @@
+body {
+	color : #F0F0F0;
+	background-image : url(../images/index_08.gif);
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	text-align : justify;
+}
+td {
+	color : #F0F0F0;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	text-align : justify;
+}
+p {
+	color : #F0F0F0;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	text-align : justify;
+	margin-bottom : 0px;
+	margin-top : 0px;
+}
+a {
+	color : #E4E4E4;
+	text-decoration : none;
+}
+a:hover {
+	color : #FAB705;
+}
+h1 {
+	color : #FFC617;
+	font-family : "Trebuchet MS";
+	font-size : 20pt;
+	margin-bottom : 0px;
+	margin-top : 0px;
+	height : 20px;
+}
+h2 {
+	color : #A8A8A8;
+	font-family : "Trebuchet MS";
+	font-size : 14pt;
+	font-style : italic;
+	margin-bottom : 0px;
+	margin-top : 0px;
+}
+h3 {
+	color : #FBDD33;
+	font-family : Tahoma;
+	font-size : 16pt;
+	margin-bottom : 0px;
+}
+h4 {
+	color : #FF8000;
+	font-family : Verdana;
+	font-style : italic;
+	font-size : 14pt;
+	margin-bottom : 0px;
+}
+.linebottom {
+	border-bottom : thin dashed;
+}
+.ftf {
+	background-image : url(../images/find_tyres.jpg);
+	background-repeat : no-repeat;
+}
+.fwf {
+	background-image : url(../images/find_wheels.jpg);
+	background-repeat : no-repeat;
+}
+.tel {
+	color : White;
+	font-family : "Trebuchet MS";
+	font-style : italic;
+	font-size : 20pt;
+	background-image : url(../images/index_02.gif);
+	background-repeat : no-repeat;
+	text-align : center;
+}
+.rec {
+	background-image : url(../images/index_04_r.jpg);
+	color : Black;
+}
+.topmenu {
+	background-image : url(../images/index_06_r.gif);
+	font-size : 10pt;
+	color : #FEE434;
+	text-align : center;
+}
+.leftmenu {
+	background-image : url(../images/index_07_l.gif);
+	background-repeat : repeat-y;
+	color : #D5D2D2;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 14pt;
+	vertical-align : top;
+	padding-left : 20px;
+	font-style : italic;
+} 
+.bottom {
+	background-image : url(../images/index_07.gif);
+	background-repeat : repeat-y;
+	color : #D5D2D2;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+	vertical-align : top;
+	padding-left : 20px;
+}
+.login {
+	color : Black;
+	font-size : 7pt;
+	text-align : right;
+}
+.line1 {
+	border-right : thin dotted #6B6B6B;
+}
+.line2 {
+	border-left : thin dotted #6B6B6B;
+}
+.spec {
+	background-image : url(../images/index_04_r.jpg);
+	background-position : center;
+	background-repeat : repeat-x;
+}
+.specnote {
+	font-size : 11px;
+	color : White;
+}
+.specsale {
+	color : #FFD700;
+	font-size : 22pt;
+	font-family : Tahoma;
+	font-style : italic;
+	font-weight : bold;
+}
+.linktop {
+	color : Black;
+}
+.leftnews {
+	font-size : 8pt;
+	margin-right : 55px;
+	font-family : Tahoma;
+	font-weight : normal;
+	color : #FFD78C;
+}

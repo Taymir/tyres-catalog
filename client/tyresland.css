@@ -1,0 +1,75 @@
+body {
+	background-image : url(images/tyre_10.gif);
+}
+H4 {
+	color : #FE8001;
+	font-size : 14pt;
+	font-family : Tahoma;
+	font-weight : bold;
+	font-style : italic;
+}
+.tel {
+	color : White;
+	margin-left : 42px;
+	font-size : 18pt;
+	font-family : Tahoma;
+	font-style : italic;
+	margin-top : 13px;
+}
+.lmenu {
+	color : #E8E8E8;
+	font-family : Tahoma;
+	font-size : 20pt;
+	margin-left : 20px;
+}
+.lmenu2 {
+	color : #E8E8E8;
+	font-family : Tahoma;
+	font-size : 16pt;
+	margin-left : 20px;
+}
+.name {
+	font-family : "Century Gothic";
+	font-size : 30px;
+	font-weight : bold;
+	font-style : italic;
+	color : #F3DD41;
+}
+.ftf {
+	background-image : url(images/findtyrefon.jpg);
+	background-repeat : no-repeat;
+	background-position : right;
+}
+.fwf {
+	background-image : url(images/findwheelfon.jpg);
+	background-repeat : no-repeat;
+	background-position : right;
+}
+.linebottom {
+	border-bottom : 5px dashed Silver;
+}
+#results {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12px;
+	background-color: white;
+	text-align: center;
+	border: 2px solid #999999;
+	color: #000000;
+}
+#results caption {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-transform: lowercase;
+	height: 20px;
+	color: #FFFFFF;
+}
+#results th {
+	background-color: #FFCC00;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+#results td {
+	height: 80px;
+	color: #000000;
+}
