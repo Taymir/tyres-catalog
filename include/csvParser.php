@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          csvParser.php
-**          LastMod: 23:00 23.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 require_once 'mysql.php';
 require_once 'validators.php';
@@ -26,7 +26,7 @@ class csvParser {
     var $tpl;
     
     
-    function csvParser ($filename, $tpl, $hasHeader = 'autodetect') {
+    function csvParser ($filename, &$tpl, $hasHeader = 'autodetect') {
         $this->hasHeader = $hasHeader;
         if (!file_exists ($filename)) {
             showError ($tpl, 'Загруженный файл не найден');

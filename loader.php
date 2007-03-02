@@ -5,15 +5,15 @@
 **                      u7@2007
 **  
 **          loader.php
-**          LastMod: 18:09 19.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 require_once 'include/JsHttpRequest.php';
+require_once 'include/config.php';
 require_once 'include/tyres.php';
 require_once 'include/disks.php';
 require_once 'include/manfr.php';
 require_once 'include/xtemplate.class.php';
 
-$db = db_connect ('tyres', 'localhost', 'root', '0');
 $JsHttpRequest =& new JsHttpRequest("windows-1251");
 
 switch (@$_REQUEST['type']) {

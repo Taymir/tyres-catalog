@@ -5,11 +5,11 @@
 **                      u7@2007
 **  
 **          search.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 
 // index page
-function index_page ($tpl) {
+function index_page (&$tpl) {
     $tpl->assign ('manufacturer', fill_lists ('manufacturer', select_manfrs ()));
     $tpl->assign ('width', fill_lists ('width', select_twidths ()));
     $tpl->assign ('height', fill_lists ('height', select_theights ()));

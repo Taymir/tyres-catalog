@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          utils.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 require_once 'buttons.php';
 
@@ -74,7 +74,7 @@ function check2arr ($arr) {
     return $ret;
 }
 
-function tableout ($result, $tpl, $url) {
+function tableout ($result, &$tpl, $url) {
     global $buttons;
     $tpl->assign_file ('resultset', 'templates/tableout.tpl');
     

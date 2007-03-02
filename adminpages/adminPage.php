@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          adminPage.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 if (!defined ('ADMIN_ACCESS')) die ('Hack attempt');
 
@@ -298,7 +298,7 @@ class adminPage {
     }
     
     function prc_importPage () {
-        $csv = &$this->_csvParse ();
+        $csv = $this->_csvParse ();
         $this->tpl->assign_file ('resultset', 'templates/import-report.tpl');
         $this->tpl->assign ('added', count ($csv->added));
         $this->tpl->assign ('replaced', count ($csv->replaced));

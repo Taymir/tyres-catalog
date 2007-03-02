@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          admin.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 23:57 02.03.2007
 ** *********************************/
 require_once 'include/adminaccess.php';
 if (!defined ('ADMIN_ACCESS')) die ('Hack attempt');
