@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          csvParser.php
-**          LastMod: 23:57 02.03.2007
+**          LastMod: 21:37 04.03.2007
 ** *********************************/
 require_once 'mysql.php';
 require_once 'validators.php';
@@ -220,7 +220,7 @@ class csvDisks extends csvParser {
 };
 
 class csvTyreModels extends csvParser {
-    var $fields = array ('manufacturer' => 0, 'model' => 1, 'description' => 2, 'season' => 3);
+    var $fields = array ('model' => 0, 'manufacturer' => 1, 'description' => 2, 'season' => 3);
     var $validators = array (
         'manufacturer' => 'notnull',
         'model' => 'notnull',

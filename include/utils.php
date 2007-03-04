@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          utils.php
-**          LastMod: 23:57 02.03.2007
+**          LastMod: 21:16 04.03.2007
 ** *********************************/
 require_once 'buttons.php';
 
@@ -78,31 +78,33 @@ function tableout ($result, &$tpl, $url) {
     global $buttons;
     $tpl->assign_file ('resultset', 'templates/tableout.tpl');
     
-    foreach (array_keys($result[0]) as $column) {
-        $tpl->assign ('field', $column);
-        $tpl->parse ('main.tableout.row.head');
-    }
-    
-    $tpl->assign ('field', 'edit');
-    $tpl->parse ('main.tableout.row.head');
-    
-    $tpl->assign ('field', 'del');
-    $tpl->parse ('main.tableout.row.head');
-    
-    $tpl->parse ('main.tableout.row');
-    foreach ($result as $row) {
-        foreach ($row as $column) {
+    if (is_array ($result) && isset ($result[0])) {
+        foreach (array_keys($result[0]) as $column) {
             $tpl->assign ('field', $column);
-            $tpl->parse ('main.tableout.row.column');
+            $tpl->parse ('main.tableout.row.head');
         }
-        //var_dump ($row);
-        $tpl->assign ('field', "<a href='$url&edit&id={$row['id']}'>{$buttons['edit']}</a>");
-        $tpl->parse ('main.tableout.row.column');
+    
+        $tpl->assign ('field', 'edit');
+        $tpl->parse ('main.tableout.row.head');
         
-        $tpl->assign ('field', "<a href='$url&del&id={$row['id']}'>{$buttons['del']}</a>");
-        $tpl->parse ('main.tableout.row.column');
+        $tpl->assign ('field', 'del');
+        $tpl->parse ('main.tableout.row.head');
         
         $tpl->parse ('main.tableout.row');
+        foreach ($result as $row) {
+            foreach ($row as $column) {
+                $tpl->assign ('field', $column);
+                $tpl->parse ('main.tableout.row.column');
+            }
+            
+            $tpl->assign ('field', "<a href='$url&edit&id={$row['id']}'>{$buttons['edit']}</a>");
+            $tpl->parse ('main.tableout.row.column');
+            
+            $tpl->assign ('field', "<a href='$url&del&id={$row['id']}'>{$buttons['del']}</a>");
+            $tpl->parse ('main.tableout.row.column');
+            
+            $tpl->parse ('main.tableout.row');
+        }
     }
     $tpl->parse ('main.tableout');
 }
