@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          utils.php
-**          LastMod: 21:16 04.03.2007
+**          LastMod: 19:30 22.03.2007
 ** *********************************/
 require_once 'buttons.php';
 
@@ -28,9 +28,9 @@ function arr2ors ($arr, $enum_param) {
         if (substr($str, -3) == ' OR') $str = substr_replace ($str, '', -3);
         $str .= ")";
         return $str;
-    } elseif (is_string($arr)) 
+    } elseif (is_string($arr)) {
         return " AND $enum_param = '$arr'";
-   else
+    } else
         return '';
 }
 
@@ -66,12 +66,28 @@ function fill_tpl_list (&$tpl, $block, $arr, $value = null) {
 function check2arr ($arr) {
     $ret = array ();
     foreach ($arr as $val)
-        if (isset ($_POST[$val]))
+        if (isset ($_REQUEST[$val]))
             $ret[$val] = true;
         /*else
             $ret[$val] = false;*/
     if (count($ret) == 0) $ret = null;
     return $ret;
+}
+
+function parseChecks (&$tpl, $block, $checks) {
+    $count = 0;
+    foreach ($checks as $check) {
+        if (isset ($_REQUEST [$check])) {
+            $tpl->parse ($block . '.check_' . $check);
+            $count++;
+        }
+    }
+    
+    if ($count == 0) {
+        foreach ($checks as $check) {
+            $tpl->parse ($block . '.check_' . $check);
+        }
+    }
 }
 
 function tableout ($result, &$tpl, $url) {

@@ -5,12 +5,12 @@
 **                      u7@2007
 **  
 **          show_tyres.php
-**          LastMod: 18:09 19.02.2007
+**          LastMod: 19:03 22.03.2007
 ** *********************************/
 $tpl->assign_file ('resultset', 'templates/tyres.tpl');
 
 //валидация полученных данных
-$manufacturer = if_in_arr (@$_REQUEST['manufacturer'], select_manfrs ());
+$manufacturer = if_in_arr (@$_REQUEST['tmanufacturer'], select_manfrs (false, 'tyres'));
 $width = if_in_arr(@$_REQUEST['width'], select_twidths ());
 $heigh = if_in_arr(@$_REQUEST['height'], select_theights ());
 $radius = if_in_arr(@$_REQUEST['radius'], select_tradiuses ());

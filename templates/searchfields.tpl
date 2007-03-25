@@ -12,14 +12,14 @@
 </tr>
 <tr>
 <td>
-{manufacturer}
+{tmanufacturer}
 </td>
-<td><input type="checkbox" name="summer" checked></td>
+<td><input type="checkbox" name="summer" <!-- BEGIN: check_summer -->checked<!-- END:check_summer -->></td>
 <td><b>Летняя</b></td>
 </tr>
 <tr>
 <td><b>Размер шины</b></td>
-<td><input type="checkbox" name="winter" checked></td>
+<td><input type="checkbox" name="winter" <!-- BEGIN: check_winter -->checked<!-- END:check_winter -->></td>
 <td><b>Зимняя</b></td>
 </tr>
 <tr>
@@ -30,7 +30,7 @@
 <font size="+1">R</font>
 {radius}
 </td>
-<td><input type="checkbox" name="spiked" checked></td>
+<td><input type="checkbox" name="spiked" <!-- BEGIN: check_spiked -->checked<!-- END:check_spiked -->></td>
 <td><b>Зимняя шип</b></td>
 </tr>
 <tr class="line">
@@ -56,14 +56,14 @@
 </tr>
 <tr>
 <td>
-{manufacturer}
+{dmanufacturer}
 </td>
-<td><input type="checkbox" name="solid" checked></td>
+<td><input type="checkbox" name="solid" <!-- BEGIN: check_solid -->checked<!-- END:check_solid -->></td>
 <td><b>Литой</b></td>
 </tr>
 <tr>
 <td><b>Параметры диска</b></td>
-<td><input type="checkbox" name="forged" checked></td>
+<td><input type="checkbox" name="forged" <!-- BEGIN: check_forged -->checked<!-- END:check_forged -->></td>
 <td><b>Кованый</b></td>
 </tr>
 <tr>
@@ -74,7 +74,7 @@
 <font size="+1">Х</font>
 {distance}
 </td>
-<td><input type="checkbox" name="pressed" checked></td>
+<td><input type="checkbox" name="pressed" <!-- BEGIN: check_pressed -->checked<!-- END:check_pressed -->></td>
 <td><b>Штампованый</b></td>
 </tr>
 <tr>

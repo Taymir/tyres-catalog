@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          index.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 19:04 22.03.2007
 ** *********************************/
 require_once 'include/config.php';
 require_once 'include/tyres.php';
@@ -18,15 +18,18 @@ require_once 'include/paginator.php';
 
 $tpl = new XTemplate ('templates/main.tpl');
 
-$tpl->assign ('manufacturer', fill_lists ('manufacturer', select_manfrs ()));
+$tpl->assign ('tmanufacturer', fill_lists ('tmanufacturer', select_manfrs (false, 'tyres')));
 $tpl->assign ('width', fill_lists ('width', select_twidths ()));
 $tpl->assign ('height', fill_lists ('height', select_theights ()));
 $tpl->assign ('radius', fill_lists ('radius', select_tradiuses ()));
+parseChecks ($tpl, 'main.searchfields.tyres', array ('summer', 'winter', 'spiked'));
 $tpl->parse ('main.searchfields.tyres');
 
+$tpl->assign ('dmanufacturer', fill_lists ('dmanufacturer', select_manfrs (false, 'disks')));
 $tpl->assign ('holes', fill_lists ('holes', select_dholes ()));
 $tpl->assign ('distance', fill_lists ('distance', select_ddistances ()));
 $tpl->assign ('radius', fill_lists ('radius', select_dradiuses ()));
+parseChecks ($tpl, 'main.searchfields.disks', array ('solid', 'forged', 'pressed'));
 $tpl->parse ('main.searchfields.disks');
 
 $tpl->parse ('main.searchfields');

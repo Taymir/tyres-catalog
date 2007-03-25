@@ -19,7 +19,8 @@ class tyreModelsPage extends adminPage {
         'image' => 'image',
         'manufacturer' => 'int',
         'model' => 'notnull',
-        'description' => 'notnull',
+        //'description' => 'notnull',
+        // @TODO: валидатор сезона
         );
     var $filters = array (
         'manufacturer' => 'htmlsp',
@@ -30,11 +31,11 @@ class tyreModelsPage extends adminPage {
     function _initLists ($data = null) {
         $seasons = array ('summer' => 'летн€€', 'winter' => 'зимн€€', 'spiked' => 'шипованна€');
         if (!is_null ($data)) {
-            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (), $data['manufacturer']);
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (false, 'tyres'), $data['manufacturer']);
             fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.season', $seasons, $data['season']);
             $this->tpl->parse ('main.' . $this->editForm . '.season');
         } else {
-            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs ());
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (false, 'tyres'));
             fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.season', $seasons);
             $this->tpl->parse ('main.' . $this->editForm . '.season');
         }

@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          manfrsPage.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 16:20 16.03.2007
 ** *********************************/
 if (!defined ('ADMIN_ACCESS')) die ('Hack attempt');
 
@@ -17,6 +17,7 @@ class manfrsPage extends adminPage {
     var $csvImportForm = 'import_manfrs';
     var $validators = array (
         'name' => 'notnull',
+        // @TODO: 'types' => 'types', валидатор не зарегистрирован!
         );
     var $filters = array (
         'name' => 'htmlsp',
@@ -24,7 +25,14 @@ class manfrsPage extends adminPage {
         );
     
     function _initLists ($data = null) {
-        return; //empty
+        $type = array ('tyres' => 'Производитель шин', 'disks' => 'Производитель дисков', 'both' => 'Производитель шин и дисков');
+        if (!is_null ($data)) {
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.type', $type, $data['type']);
+            $this->tpl->parse ('main.' . $this->editForm . '.type');
+        } else {
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.type', $type);
+            $this->tpl->parse ('main.' . $this->editForm . '.type');
+        }
     }
     
     function _getDataById ($id) {
@@ -36,11 +44,11 @@ class manfrsPage extends adminPage {
     }
     
     function _addPageQuery ($data) {
-        return @add_manfr ($data['name'], $data['description']);
+        return @add_manfr ($data['name'], $data['description'], $data['type']);
     }
     
     function _editPageQuery ($data) {
-        return @edit_manfr ($data['id'], $data['name'], $data['description']);
+        return @edit_manfr ($data['id'], $data['name'], $data['description'], $data['type']);
     }
     
     function _delPageQuery ($id) {

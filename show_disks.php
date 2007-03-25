@@ -5,12 +5,12 @@
 **                      u7@2007
 **  
 **          show_disks.php
-**          LastMod: 18:09 19.02.2007
+**          LastMod: 19:04 22.03.2007
 ** *********************************/
 $tpl->assign_file ('resultset', 'templates/disks.tpl');
 
 //валидация полученных данных
-$manufacturer = if_in_arr (@$_REQUEST['manufacturer'], select_manfrs ());
+$manufacturer = if_in_arr (@$_REQUEST['dmanufacturer'], select_manfrs (false, 'disks'));
 $holes = if_in_arr(@$_REQUEST['holes'], select_dholes ());
 $distance = if_in_arr(@$_REQUEST['distance'], select_ddistances ());
 $radius = if_in_arr(@$_REQUEST['radius'], select_dradiuses ());

@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          tyres.php
-**          LastMod: 17:17 24.02.2007
+**          LastMod: 16:16 16.03.2007
 ** *********************************/
 require_once ('mysql.php');
 require_once ('utils.php');

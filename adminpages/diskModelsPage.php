@@ -19,6 +19,7 @@ class diskModelsPage extends adminPage {
         'image' => 'image',
         'manufacturer' => 'int',
         'model' => 'notnull',
+        // @TODO: валидатор материала
         );
     var $filters = array (
         'manufacturer' => 'htmlsp',
@@ -28,11 +29,11 @@ class diskModelsPage extends adminPage {
     function _initLists ($data = null) {
         $materials = array ('solid' => 'литой', 'forged' => 'кованный', 'pressed' => 'штампованный');
         if (!is_null ($data)) {
-            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (), $data['manufacturer']);
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (false, 'disks'), $data['manufacturer']);
             fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.material', $materials, $data['material']);
             $this->tpl->parse ('main.' . $this->editForm . '.material');
         } else {
-            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs ());
+            fill_tpl_list ($this->tpl, 'main.' . $this->editForm, select_manfrs (false, 'disks'));
             fill_tpl_list ($this->tpl, 'main.' . $this->editForm . '.material', $materials);
             $this->tpl->parse ('main.' . $this->editForm . '.material');
         }

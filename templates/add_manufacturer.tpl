@@ -16,6 +16,14 @@
         <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
+        <td>Категория:</td>
+        <td>
+            <select name="type">
+                <!-- BEGIN: type --><!-- BEGIN: option --><option value="{id}" <!-- BEGIN: chosen -->selected="selected"<!-- END: chosen -->>{value}</option><!-- END: option --><!-- END: type -->
+            </select>
+        </td>
+    </tr>
+    <tr>
         <td>Описание:</td>
         <td><textarea name="description" style="width:450px; height:100px">{description}</textarea></td>
     </tr>

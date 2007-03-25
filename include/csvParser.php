@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          csvParser.php
-**          LastMod: 21:37 04.03.2007
+**          LastMod: 15:47 16.03.2007
 ** *********************************/
 require_once 'mysql.php';
 require_once 'validators.php';
@@ -98,6 +98,9 @@ class csvParser {
                     break;
                 case 'season':
                     if (!vld_season($field)) { $this->_addVldError($fieldname, 'Сезон [summer|winter|spiked]', $num); return false; }
+                    break;
+                case 'types':
+                    if (!vld_types($field)) { $this->_addVldError($fieldname, 'Категория производителя [tyres|disks|both]', $num); return false; }
                     break;
             }
         }
@@ -255,10 +258,11 @@ class csvDiskModels extends csvParser {
 };
 
 class csvManfrs extends csvParser {
-    var $fields = array ('name' => 0, 'description' => 1);
-    var $headers = array ('Производитель', 'Описание');
+    var $fields = array ('name' => 0, 'description' => 1, 'type' => 2);
+    var $headers = array ('Производитель', 'Описание', 'Категория');
     var $validators = array (
         'name' => 'notnull',
+        'type' => 'types',
         );
     var $filters = array (
         'name' => 'htmlsp',
@@ -266,7 +270,7 @@ class csvManfrs extends csvParser {
         );
     
     function _insertData ($row) {
-        return add_manfr_csv ($row[$this->fields['name']], $row[$this->fields['description']]);
+        return add_manfr_csv ($row[$this->fields['name']], $row[$this->fields['description']], $row[$this->fields['type']]);
     }
 };
 ?>

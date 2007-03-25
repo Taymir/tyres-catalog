@@ -5,7 +5,7 @@
 **                      u7@2007
 **  
 **          validators.php
-**          LastMod: 17:40 19.02.2007
+**          LastMod: 15:47 16.03.2007
 ** *********************************/
 function vld_notnull ($value) {
     if (strlen(trim($value)) == 0)
@@ -63,6 +63,19 @@ function vld_material ($value) {
         case 'solid':
         case 'forged':
         case 'pressed':
+            return true;
+        break;
+        default:
+            return false;
+        break;
+    }
+}
+
+function vld_types ($value) {
+    switch ($value) {
+        case 'tyres':
+        case 'disks':
+        case 'both':
             return true;
         break;
         default:
